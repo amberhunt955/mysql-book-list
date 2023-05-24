@@ -5,7 +5,7 @@ const cors = require('cors');
 
 const app = express();
 
-//* ===== CONNECT TO DB
+//* ===== CONNECT TO DB 
 const db = mysql.createConnection({
     host: "localhost",
     user: "root",
@@ -20,10 +20,12 @@ app.use(express.json())
 app.use(cors())
 
 //* ===== ROUTES
+//! BACKEND HOME PAGE ROUTE
 app.get("/", (req, res) => {
     res.json("Hello world, this is the backend!")
 })
 
+//! CREATE A NEW BOOK
 app.post("/books", (req, res) => {
     const q = "INSERT INTO books (`title`, `author`, `desc`, `photo`) VALUES (?)"
     const values = [
@@ -39,11 +41,23 @@ app.post("/books", (req, res) => {
     })
 })
 
+//! GET ALL BOOKS
 app.get("/books", (req, res) => {
     const q = "SELECT * FROM books"
     db.query(q, (err, data) => {
         if (err) return res.json(err)
         return res.json(data)
+    })
+})
+
+//! DELETE A BOOK
+app.delete("/books/:id", (req, res) => {
+    const bookId = req.params.id;
+    const q = "DELETE FROM books WHERE id = ?"
+
+    db.query(q, [bookId], (err, data) => {
+        if (err) return res.json(err)
+        return res.json("Book has been deleted successfully!")
     })
 })
 

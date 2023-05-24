@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
+// styling and material UI
+import Button from "@mui/material/Button";
+
 function Home() {
     const [books, setBooks] = useState([])
 
@@ -18,6 +21,15 @@ function Home() {
         fetchAllBooks();
     }, [])
 
+    const handleDelete = async (id) => {
+        try {
+            await axios.delete(`http://localhost:${process.env.REACT_APP_PORT}/books/${id}`)
+            window.location.reload();
+        } catch (err) {
+            console.log(err);
+        }
+    }
+
 
     return (
         <div>
@@ -25,8 +37,10 @@ function Home() {
 
             {books.map(book => (
                 <div className="book" key={book.id}>
-                    <h3>{book.title}</h3>
+                    <h3>{book.title} by {book.author}</h3>
                     <p>{book.desc}</p>
+                    <Button onClick={() => handleDelete(book.id)}>Delete</Button>
+                    <Button>Edit</Button>
                 </div>
             ))}
 
