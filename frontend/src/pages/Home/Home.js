@@ -1,17 +1,20 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 // styling and material UI
 import Button from "@mui/material/Button";
+import "./Home.css";
 
 function Home() {
     const [books, setBooks] = useState([])
+
+    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchAllBooks = async () => {
             try {
                 const res = await axios.get(`http://localhost:${process.env.REACT_APP_PORT}/books`)
-                console.log(res.data);
                 setBooks(res.data)
             } catch (err) {
                 console.log(err);
@@ -32,15 +35,18 @@ function Home() {
 
 
     return (
-        <div>
+        <div className="home">
             <h1>Books</h1>
 
             {books.map(book => (
                 <div className="book" key={book.id}>
-                    <h3>{book.title} by {book.author}</h3>
+                    <h3>{book.title}</h3>
+                    <span id="author">by {book.author}</span>
                     <p>{book.desc}</p>
+                    <div className="options">
                     <Button onClick={() => handleDelete(book.id)}>Delete</Button>
-                    <Button>Edit</Button>
+                    <Button onClick={() => navigate(`/update/${book.id}`)}>Edit</Button>
+                    </div>
                 </div>
             ))}
 

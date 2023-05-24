@@ -5,6 +5,7 @@ import axios from "axios";
 // styling and material UI
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
+import "./AddBook.css"
 
 function AddBook() {
   const navigate = useNavigate();
@@ -32,9 +33,10 @@ function AddBook() {
   };
 
   return (
-    <div>
+    <div class="form-page">
       <h1>Add A New Book</h1>
       <form>
+        <div className="title-and-author">
         <TextField
           label="Title"
           name="title"
@@ -48,6 +50,7 @@ function AddBook() {
           fullWidth
           onChange={handleChange}
         />
+        </div>
 
         <TextField
           label="Description"
@@ -69,6 +72,7 @@ function AddBook() {
           Add Book
         </Button>
       </form>
+      <a href="/">Back Home</a>
     </div>
   );
 }

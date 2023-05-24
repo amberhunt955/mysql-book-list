@@ -1,11 +1,12 @@
 import { Routes, Route } from "react-router-dom";
 
-// import pages
-import Home from "./pages/Home";
-import AddBook from "./pages/AddBook";
-import UpdateBook from "./pages/UpdateBook";
 
-// import './App.css';
+// import pages
+import Home from "./pages/Home/Home";
+import AddBook from "./pages/AddBook/AddBook";
+import UpdateBook from "./pages/UpdateBook/UpdateBook";
+
+import './App.css';
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
 
         <Route path="/add" element={ <AddBook /> } />
         
-        <Route path="/update" element={ <UpdateBook /> } />
+        <Route path="/update/:id" element={ <UpdateBook /> } />
       </Routes>
     </div>
   );

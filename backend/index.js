@@ -20,7 +20,7 @@ app.use(express.json())
 app.use(cors())
 
 //* ===== ROUTES
-//! BACKEND HOME PAGE ROUTE
+//! BACKEND HOME PAGE
 app.get("/", (req, res) => {
     res.json("Hello world, this is the backend!")
 })
@@ -58,6 +58,24 @@ app.delete("/books/:id", (req, res) => {
     db.query(q, [bookId], (err, data) => {
         if (err) return res.json(err)
         return res.json("Book has been deleted successfully!")
+    })
+})
+
+//! UPDATE A BOOK
+app.put("/books/:id", (req, res) => {
+    const bookId = req.params.id;
+    const q = "UPDATE books SET `title` = ?, `author` = ?, `desc` = ?, `photo` = ? WHERE id = ?"
+
+    const values = [
+        req.body.title,
+        req.body.author,
+        req.body.desc,
+        req.body.photo
+    ]
+
+    db.query(q, [...values, bookId], (err, data) => {
+        if (err) return res.json(err)
+        return res.json("Book has been updated successfully!")
     })
 })
 
