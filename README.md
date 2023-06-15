@@ -4,7 +4,7 @@
 
 ## Screenshot
 
-<img width="565" src="![library app](image.png)">
+![library app](image.png)
 
 ## Future Improvements
 
@@ -28,7 +28,7 @@ Run the following commands:
 <li>npm i</li>
 <li>touch .env</li>
 
-For this project you will need to connect to your own MySQL database. You will need to add your password to a variable PASSWORD in the .env file in the backend. You will also need to create a database called "test" (remind me to rename this later). The test database has a table called "books". The columns look like this:
+<p>For this project you will need to connect to your own MySQL database. You will need to add your password to a variable PASSWORD in the .env file in the backend. You will also need to create a database called "test" (remind me to rename this later). The test database has a table called "books". The columns look like this:</p>
 
 ![columns](image-1.png)
 
@@ -40,11 +40,11 @@ Run the following commands:
 <li>npm i</li>
 <li>touch .env</li>
 
-You will need to add the REACT_APP_PORT variable to the .env file.
+<p>You will need to add the REACT_APP_PORT variable to the .env file.</p>
 
 ### Running the application
 
-You will run nodemon in the backend and npm start in the frontend. That's it! Please don't hesitate to reach out if you encounter any issues.
+You will run "nodemon" in the backend and "npm start" in the frontend. That's it! Please don't hesitate to reach out if you encounter any issues.
 
 ## Contact
 
