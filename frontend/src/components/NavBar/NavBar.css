@@ -4,5 +4,6 @@ nav {
     flex-direction: row;
     justify-content: space-between;
     padding-inline: 10px;
-    background-color: grey;
+    background-color: #3d405b;
+    color: #f4f1de;
 }
