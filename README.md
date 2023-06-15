@@ -8,7 +8,7 @@
 
 ## Future Improvements
 
-This app is only in the beginning stages. With the frontend, I would like to improve A LOT. Very basic styling at the moment with lots of areas to improve in terms of design and overall responsiveness. In the backend - I would like to 
+This app is only in the beginning stages. With the frontend, I would like to improve A LOT. Very basic styling at the moment with lots of areas to improve in terms of design and overall responsiveness. Still need to adjust the colors for the Material UI components. In the backend - I want to add user registration/login and enable users to separate their books into various lists.
 
 ## View Project
 
