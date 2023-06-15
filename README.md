@@ -28,6 +28,7 @@ Run the following commands:
 <li>npm i</li>
 <li>touch .env</li>
 
+<br/>
 <p>For this project you will need to connect to your own MySQL database. You will need to add your password to a variable PASSWORD in the .env file in the backend. You will also need to create a database called "test" (remind me to rename this later). The test database has a table called "books". The columns look like this:</p>
 
 ![columns](image-1.png)
@@ -40,6 +41,7 @@ Run the following commands:
 <li>npm i</li>
 <li>touch .env</li>
 
+<br/>
 <p>You will need to add the REACT_APP_PORT variable to the .env file.</p>
 
 ### Running the application
