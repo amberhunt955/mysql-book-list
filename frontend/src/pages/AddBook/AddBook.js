@@ -33,7 +33,7 @@ function AddBook() {
   };
 
   return (
-    <div class="form-page">
+    <div className="form-page">
       <h1>Add A New Book</h1>
       <form>
         <div className="title-and-author">

@@ -5,18 +5,44 @@
     gap: 20px;
 }
 
+.list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1500px;
+    padding: 20px;
+}
+
 .book {
-    width: 500px;
-    height: 300px;
+    width: 300px;
+    height: 550px;
     max-width: 90vw;
     padding: 10px;
-    border: 2px solid black;
+    border: 1px solid black;
+    border-radius: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
+}
+
+.book-photo {
+    width: 95%;
+    border-radius: 20px;
+}
+
+.title-author {
+    text-align: center;
 }
 
 .author {
     text-emphasis: none;
+    font-style: italic;
+}
+
+.desc {
+    text-align: center;
 }
